@@ -53,7 +53,12 @@ function obtenerDatosDelUsuario() {
 function renderizarDatosUsuario() {
   obtenerDatosDelUsuario();
 
-  let template = `
+  document.querySelector("#nombre").innerText = datosPersona.nombre;
+  document.querySelector("#edad").innerText = datosPersona.edad;
+  document.querySelector("#ciudad").innerText = datosPersona.ciudad;
+  document.querySelector("#javascript").innerText = datosPersona.interesPorJs;
+
+  /*let template = `
   <h3>Nombre: <span id="nombre">${datosPersona.nombre}</span></h3>
   <h3>Edad: <span id="edad">${datosPersona.edad}</span></h3>
   <h3>Ciudad: <span id="ciudad">${datosPersona.ciudad}</span></h3>
@@ -63,6 +68,7 @@ function renderizarDatosUsuario() {
   const card = document.querySelector(".card-header");
 
   card.innerHTML = template;
+  */
 }
 
 function recorrerListadoYRenderizarTarjetas() {
