@@ -5,7 +5,7 @@
 const url = "https://rickandmortyapi.com/api/character";
 
 window.addEventListener("load", () => {
-  const character = document.getElementById("chracter");
+  const character = document.getElementById("characters");
   const ul = document.createElement("ul");
   const data = JSON.parse(localStorage.getItem("characters"));
 
@@ -17,7 +17,7 @@ window.addEventListener("load", () => {
           "characters",
           JSON.stringify(
             characters.results.flatMap((item) => ({
-              id: item.id,
+              name: item.name,
               image: item.image,
             }))
           )
@@ -27,13 +27,16 @@ window.addEventListener("load", () => {
 
   getData();
 
-  if (data.length) {
+  data &&
     data.map((item) => {
       const li = document.createElement("li");
       const img = document.createElement("img");
-      li.appendChild(document.createTextNode(item.image));
+      const span = document.createElement("span");
+      span.appendChild(document.createTextNode(item.name));
+      li.appendChild(span);
+      img.src = item.image;
+      li.appendChild(img);
       ul.appendChild(li);
-      character.appendChild(li);
+      character.appendChild(ul);
     });
-  }
 });
