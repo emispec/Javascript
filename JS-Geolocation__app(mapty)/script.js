@@ -50,7 +50,7 @@ class App {
 
     //ON es como un metodo eventListener propio de la libreria leaflet
     //Handling clicks on map
-    this.#map.on("click", this_showForm.bind(this));
+    this.#map.on("click", this._showForm.bind(this));
   }
 
   _showForm(mapE) {
