@@ -1,3 +1,7 @@
+let jwt = localStorage.getItem("jwt");
+
+if (jwt) window.location.replace("./mis-teareas.html");
+
 window.addEventListener("load", function () {
   /* ---------------------- obtenemos variables globales ---------------------- */
   const email = document.getElementById("inputEmail");
